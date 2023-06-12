@@ -7,8 +7,8 @@
             <div class="c-homep-fw-infosectionmain">
               <div class="c-homep-fw-title">
                 <span class="c-homep-fw-text">
-                  {{ heroTitle }}
-                  <span>Beyond What People Say, </span>
+                  {{ homeData[0].heroTitle }}
+                  <span>{{ homeData[0].heroSubtitle }}</span>
                   <span>Built for What People Do.</span>
                 </span>
               </div>
@@ -1271,16 +1271,37 @@
 </template>
 
 <script>
+
+import connectionMixing from '../mixins/connection.mixin.js'
+
 export default {
   name: 'CSHomepFW',
+  mixins: [connectionMixing],
   data() {
     return {
       heroTitle: ' test ',
+      homeData:[],
     }
   },
   metaInfo: {
     title: 'exported project',
   },
+
+  async created(){
+    const HomeQuery = `{
+            homePageCollection{
+                items {
+                    sys {
+                        id
+                    }
+                    heroTitle
+                    heroSubtitle
+                }
+            }
+        }`
+    this.homeData = await this.fetchData(HomeQuery)
+  }
+
 }
 </script>
 
