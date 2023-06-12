@@ -7,7 +7,7 @@
             <div class="c-homep-fw-infosectionmain">
               <div class="c-homep-fw-title">
                 <span class="c-homep-fw-text">
-                 
+                  {{ heroTitle }}
                   <span>Beyond What People Say, </span>
                   <span>Built for What People Do.</span>
                 </span>
@@ -1275,8 +1275,7 @@ export default {
   name: 'CSHomepFW',
   data() {
     return {
-      rawrn6p: ' ',
-      rawmds7: ' ',
+      heroTitle: ' test ',
     }
   },
   metaInfo: {
