@@ -7,6 +7,7 @@
             <div class="c-homep-fw-infosectionmain">
               <div class="c-homep-fw-title">
                 <span class="c-homep-fw-text">
+                 
                   <span>Beyond What People Say, </span>
                   <span>Built for What People Do.</span>
                 </span>
